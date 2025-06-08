@@ -20,7 +20,14 @@ const initialState: TInitialState = {
   }
 };
 
-export const getFeed = createAsyncThunk('feed/getAll', () => getFeedsApi());
+export const getFeed = createAsyncThunk('feed/getAll', async () => {
+  const res = await getFeedsApi();
+  return {
+    orders: res.orders,
+    total: res.total,
+    totalToday: res.totalToday
+  };
+});
 
 export const getOrderByNumber = createAsyncThunk(
   'order/getByNumber',
@@ -41,6 +48,7 @@ const feedSlice = createSlice({
         state.feed = action.payload;
       })
       .addCase(getFeed.rejected, (state, { error }) => {
+        state.isLoading = false;
         state.error = error.message || 'Unknown error';
       })
 
@@ -52,6 +60,7 @@ const feedSlice = createSlice({
         state.currentOrder = action.payload.orders.pop() || null;
       })
       .addCase(getOrderByNumber.rejected, (state, { error }) => {
+        state.isLoading = false;
         state.error = error.message || 'Unknown error';
       });
   }
