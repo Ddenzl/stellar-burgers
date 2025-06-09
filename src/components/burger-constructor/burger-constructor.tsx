@@ -1,10 +1,10 @@
 import { FC, useEffect, useMemo } from 'react';
 import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorUI } from '@ui';
-import { useDispatch, useSelector } from '../../services/store';
 import { useNavigate } from 'react-router-dom';
 import { selectors } from '@selectors';
-import { closeOrder, createOrder } from '@slices';
+import { useDispatch, useSelector } from '../../services/store';
+import { clearConstructor, closeOrder, createOrder } from '@slices';
 
 export const BurgerConstructor: FC = () => {
   const dispatch = useDispatch();
@@ -31,6 +31,7 @@ export const BurgerConstructor: FC = () => {
 
   const closeOrderModal = () => {
     dispatch(closeOrder());
+    dispatch(clearConstructor());
   };
 
   const price = useMemo(
