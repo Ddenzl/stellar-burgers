@@ -35,3 +35,42 @@
 //     }
 //   }
 // };
+
+Cypress.Commands.add('addIngredient', (selector: string) => {
+  cy.get(selector)
+    .first()
+    .within(() => {
+      cy.contains('button', 'Добавить').click();
+    });
+});
+
+Cypress.Commands.add('openIngredientModal', (selector: string) => {
+  cy.get(selector).first().click();
+  cy.get('[data-cy="modal"]').as('modal').should('be.visible');
+});
+
+Cypress.Commands.add(
+  'closeModal',
+  (method: 'closeButton' | 'overlay' | 'escape') => {
+    if (method === 'closeButton') {
+      cy.get('[data-cy="modal-close-button"]').click();
+    } else if (method === 'overlay') {
+      cy.get('[data-cy="modal-overlay"]').click({ force: true });
+    } else if (method === 'escape') {
+      cy.get('body').type('{esc}');
+    }
+    cy.get('[data-cy="modal"]').should('not.exist');
+  }
+);
+
+Cypress.Commands.add('checkConstructor', (selectors: string[]) => {
+  selectors.forEach((selector) => {
+    cy.get(selector).should('exist');
+  });
+});
+
+Cypress.Commands.add('clearConstructor', (selectors: string[]) => {
+  selectors.forEach((selector) => {
+    cy.get(selector).should('not.exist');
+  });
+});
