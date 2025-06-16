@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "name": "Test-order-name",
+  "order": {
+    "ingredients": [
+      {
+        "_id": "643d69a5c3f7b9001cfa093c",
+        "name": "Краторная булка N-200i",
+        "type": "bun",
+        "proteins": 80,
+        "fat": 24,
+        "carbohydrates": 53,
+        "calories": 420,
+        "price": 1255,
+        "image": "https://code.s3.yandex.net/react/code/bun-02.png",
+        "image_mobile": "https://code.s3.yandex.net/react/code/bun-02-mobile.png",
+        "image_large": "https://code.s3.yandex.net/react/code/bun-02-large.png",
+        "__v": 0
+      },
+      {
+        "_id": "643d69a5c3f7b9001cfa093f",
+        "name": "Мясо бессмертных моллюсков Protostomia",
+        "type": "main",
+        "proteins": 433,
+        "fat": 244,
+        "carbohydrates": 33,
+        "calories": 420,
+        "price": 1337,
+        "image": "https://code.s3.yandex.net/react/code/meat-02.png",
+        "image_mobile": "https://code.s3.yandex.net/react/code/meat-02-mobile.png",
+        "image_large": "https://code.s3.yandex.net/react/code/meat-02-large.png",
+        "__v": 0
+      },
+      {
+        "_id": "643d69a5c3f7b9001cfa093c",
+        "name": "Краторная булка N-200i",
+        "type": "bun",
+        "proteins": 80,
+        "fat": 24,
+        "carbohydrates": 53,
+        "calories": 420,
+        "price": 1255,
+        "image": "https://code.s3.yandex.net/react/code/bun-02.png",
+        "image_mobile": "https://code.s3.yandex.net/react/code/bun-02-mobile.png",
+        "image_large": "https://code.s3.yandex.net/react/code/bun-02-large.png",
+        "__v": 0
+      }
+    ],
+    "owner": {
+      "name": "Test-name",
+      "email": "Email@test.test",
+      "createdAt": "2025-05-18T08:14:15.914Z",
+      "updatedAt": "2025-05-22T18:43:10.803Z"
+    },
+    "status": "done",
+    "name": "Test-order-name",
+    "createdAt": "2025-06-04T14:59:39.728Z",
+    "updatedAt": "2025-06-04T14:59:40.541Z",
+    "number": 80225,
+    "price": 3847,
+    "_id": "68405f5bc2f30c001cb29fc8"
+  }
+}

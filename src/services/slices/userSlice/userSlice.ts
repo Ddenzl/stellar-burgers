@@ -9,7 +9,7 @@ import {
   updateUserApi
 } from '@api';
 import { TUser } from '@utils-types';
-import { deleteCookie, setCookie } from '../../utils/cookie';
+import { deleteCookie, setCookie } from '../../../utils/cookie';
 
 type TInitialState = {
   isAuthChecked: boolean;
@@ -106,8 +106,7 @@ const userSlice = createSlice({
       .addCase(logOutUser.pending, (state) => {
         state.error = null;
       })
-      .addCase(logOutUser.fulfilled, (state, action) => {
-        console.log(action);
+      .addCase(logOutUser.fulfilled, (state) => {
         state.user = null;
       })
       .addCase(logOutUser.rejected, (state, { error }) => {
